@@ -25,7 +25,7 @@ function AddCharacters(){
 
 /* Ejecuto la funcion AddCharacter */
 
-AddCharacters(Characters)
+AddCharacters()
 
 /* Le pido al usuario agregar un nombre para que se guarde en una varaible */
 
