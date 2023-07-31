@@ -4,7 +4,7 @@ const Characters = []
 
 /* Creo una variable donde se va a guardar el numero de personajes que va a ingresar el usuario */
 
-const addCharacters = parseInt(window.prompt('ingrese el numero de personajes que desea agregar'))
+const addCharacters = parseInt(window.prompt('ingrese el numero de personajes que desea agregar: '))
 
 /* Funcion con un ciclo for donde se va a recorrer dependiendo del numero de personajes que ingreso el usuario */
 
@@ -36,7 +36,7 @@ let characterName = window.prompt('ingrese el nombre: ')
 function SerchCharacter(characterName) {
   for (let i = 0; i < Characters.length; i++) {
     if (characterName == Characters[i].name) {
-      return alert('El personaje' + Characters[i].name + 'encontrado con la casa: ' + Characters[i].house + ' Fue encontrado');
+      return alert('El personaje' + Characters[i].name + ' con la casa: ' + Characters[i].house + ' Fue encontrado');
     }
   }
   return alert('personaje no encontrado')
