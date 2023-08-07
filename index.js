@@ -1,47 +1,73 @@
-/* Creo un array vacio donde se van a igresar los Characters */
-
-const Characters = []
-
-/* Creo una variable donde se va a guardar el numero de personajes que va a ingresar el usuario */
-
-const addCharacters = parseInt(window.prompt('ingrese el numero de personajes que desea agregar: '))
-
-/* Funcion con un ciclo for donde se va a recorrer dependiendo del numero de personajes que ingreso el usuario */
-
-function AddCharacters(){
-  for (let i = 0; i < addCharacters; i++) {
-    variableName = window.prompt('ingrese el nombre del pesonaje que desea agregar: ')
-    variableHouse = window.prompt('ingrese el nombre de la casa que le desea asignar a su personaje ' + variableName + ' :')
-  
-    /*Creo el objeto donde se van a guardar los datos del Character y luego utilizo el .push para agregarlo al array */
-
-    const character = {
-      name: variableName,
-      house: variableHouse
-    }
-    Characters.push(character)
-  }    
+/* Creo la clase Character con todos los atributos que va a tener */
+class Character{
+  constructor(id, name, house, gender){
+    this.id = id
+    this.name = name
+    this.house = house
+    this.gender = gender
+  }
 }
 
-/* Ejecuto la funcion AddCharacter */
+/* Creo instancias de la clase Character */
 
-AddCharacters()
+const Harry = new Character(
+  1,
+  "Harry",
+  "Gryffindor",
+  "Male"
+)
+
+const Hermione = new Character(
+  2,
+  "Hermione",
+  "Gryffindor",
+  "Female"
+)
+
+const Ron = new Character(
+  3,
+  "Ron",
+  "Gryffindor",
+  "Male"
+)
+
+const Draco = new Character(
+  4,
+  "Draco",
+  "Slithering",
+  "Male"
+)
+
+const Snape = new Character(
+  5,
+  "Snape",
+  "Gryffindor",
+  "Male"
+)
+
+/* Creo un array con los personajes */
+
+const characters = [Harry, Hermione, Ron, Draco, Snape]
+
+/* Traigo todos los nombres del array characters */
+
+const charactermap = characters.map((character) => {return character.name})
+
+/* agrego un join dentro del charactermap para crear un espacio en los nombres*/
+
+const characterMapString = charactermap.join(', ')
+
+/* Muestro los personajes que existen dentro del array */
+
+window.alert("Los Personajes de Harry potter son: " +  characterMapString )
 
 /* Le pido al usuario agregar un nombre para que se guarde en una varaible */
 
-let characterName = window.prompt('ingrese el nombre: ')
+let characterName = window.prompt('ingrese el nombre que desea buscar: ')
 
-/* Funcion para buscar el personaje pasandole por parametro el pesonaje que debe buscar en el array */
+/* Busco el personaje en el array, si este no existe va a devolcer un Undefined y si existe devolvera el nombre y lo guardara en la variable */
+const characterff = characters.find((character) => { return character.name.toLowerCase() === characterName.toLocaleLowerCase() 
+})
 
-function SerchCharacter(characterName) {
-  for (let i = 0; i < Characters.length; i++) {
-    if (characterName == Characters[i].name) {
-      return alert('El personaje' + Characters[i].name + ' con la casa: ' + Characters[i].house + ' Fue encontrado');
-    }
-  }
-  return alert('personaje no encontrado')
-}
-
-/* Ejecuto la funcion AddCharacter */
-
-SerchCharacter(characterName)
+/* Creo un if ternario donde si characterff es undefined que cree un alert con el mensaje personaje no encontrado y si no es undefined va a devolver personaje encontrado */
+characterff === undefined ? alert('personaje no encontrado') : alert('personaje encontrado')
