@@ -70,4 +70,10 @@ const characterff = characters.find((character) => { return character.name.toLow
 })
 
 /* Creo un if ternario donde si characterff es undefined que cree un alert con el mensaje personaje no encontrado y si no es undefined va a devolver personaje encontrado */
-characterff === undefined ? alert('personaje no encontrado') : alert('personaje encontrado')
+if(characterff === undefined) 
+  alert('el personaje ' + characterName + ' no fue encontrado') 
+else{
+  const personaje = '\nNombre: ' + characterff.name + '\nCasa: ' + characterff.house + '\nGenero: ' + characterff.gender
+  window.alert ('el personaje que ingresaste fue encontrado, sus datos son :' + personaje )
+}
+
