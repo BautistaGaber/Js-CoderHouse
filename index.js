@@ -66,14 +66,14 @@ window.alert("Los Personajes de Harry potter son: " +  characterMapString )
 let characterName = window.prompt('ingrese el nombre que desea buscar: ')
 
 /* Busco el personaje en el array, si este no existe va a devolcer un Undefined y si existe devolvera el nombre y lo guardara en la variable */
-const characterff = characters.find((character) => { return character.name.toLowerCase() === characterName.toLocaleLowerCase() 
+const characterfind = characters.find((character) => { return character.name.toLowerCase() === characterName.toLocaleLowerCase() 
 })
 
 /* Creo un if ternario donde si characterff es undefined que cree un alert con el mensaje personaje no encontrado y si no es undefined va a devolver personaje encontrado */
-if(characterff === undefined) 
+if(characterfind === undefined) 
   alert('el personaje ' + characterName + ' no fue encontrado') 
 else{
-  const personaje = '\nNombre: ' + characterff.name + '\nCasa: ' + characterff.house + '\nGenero: ' + characterff.gender
+  const personaje = '\nNombre: ' + characterfind.name + '\nCasa: ' + characterfind.house + '\nGenero: ' + characterfind.gender
   window.alert ('el personaje que ingresaste fue encontrado, sus datos son :' + personaje )
 }
 
