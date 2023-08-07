@@ -69,7 +69,7 @@ let characterName = window.prompt('ingrese el nombre que desea buscar: ')
 const characterfind = characters.find((character) => { return character.name.toLowerCase() === characterName.toLocaleLowerCase() 
 })
 
-/* Creo un if ternario donde si characterff es undefined que cree un alert con el mensaje personaje no encontrado y si no es undefined va a devolver personaje encontrado */
+/* Creo un if donde si characterff es undefined que cree un alert con el mensaje personaje no encontrado y si no es undefined va a devolver personaje encontrado */
 if(characterfind === undefined) 
   alert('el personaje ' + characterName + ' no fue encontrado') 
 else{
