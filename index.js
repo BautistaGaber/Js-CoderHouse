@@ -1,79 +1,104 @@
-/* Creo la clase Character con todos los atributos que va a tener */
-class Character{
-  constructor(id, name, house, gender){
-    this.id = id
-    this.name = name
-    this.house = house
-    this.gender = gender
-  }
-}
+import { characters } from './script/charactersData.js'
 
-/* Creo instancias de la clase Character */
-
-const Harry = new Character(
-  1,
-  "Harry",
-  "Gryffindor",
-  "Male"
-)
-
-const Hermione = new Character(
-  2,
-  "Hermione",
-  "Gryffindor",
-  "Female"
-)
-
-const Ron = new Character(
-  3,
-  "Ron",
-  "Gryffindor",
-  "Male"
-)
-
-const Draco = new Character(
-  4,
-  "Draco",
-  "Slithering",
-  "Male"
-)
-
-const Snape = new Character(
-  5,
-  "Snape",
-  "Gryffindor",
-  "Male"
-)
-
-/* Creo un array con los personajes */
-
-const characters = [Harry, Hermione, Ron, Draco, Snape]
-
-/* Traigo todos los nombres del array characters */
-
-const charactermap = characters.map((character) => {return character.name})
-
-/* agrego un join dentro del charactermap para crear un espacio en los nombres*/
+const charactermap = characters.map((character) => {
+  return character.name
+})
 
 const characterMapString = charactermap.join(', ')
 
-/* Muestro los personajes que existen dentro del array */
+window.alert('Los nombres de los personajes son: ' + characterMapString)
 
-window.alert("Los Personajes de Harry potter son: " +  characterMapString )
-
-/* Le pido al usuario agregar un nombre para que se guarde en una varaible */
-
-let characterName = window.prompt('ingrese el nombre que desea buscar: ')
-
-/* Busco el personaje en el array, si este no existe va a devolcer un Undefined y si existe devolvera el nombre y lo guardara en la variable */
-const characterfind = characters.find((character) => { return character.name.toLowerCase() === characterName.toLocaleLowerCase() 
-})
-
-/* Creo un if donde si characterff es undefined que cree un alert con el mensaje personaje no encontrado y si no es undefined va a devolver personaje encontrado */
-if(characterfind === undefined) 
-  alert('el personaje ' + characterName + ' no fue encontrado') 
-else{
-  const personaje = '\nNombre: ' + characterfind.name + '\nCasa: ' + characterfind.house + '\nGenero: ' + characterfind.gender
-  window.alert ('el personaje que ingresaste fue encontrado, sus datos son :' + personaje )
+const characterfind = (name) => {
+  return characters.find(
+    (character) => character.name.toLowerCase() == name.toLowerCase()
+  )
 }
 
+const search = document.getElementById('inputt')
+const btnSearch = document.getElementById('button-serch')
+
+btnSearch.addEventListener('click', () => {
+  const userFound = characterfind(search.value)
+  if (userFound !== undefined) {
+    localStorage.setItem('name', JSON.stringify(userFound))
+    Toastify({
+      text: 'El Nombre de Personaje Ingresado Existe',
+      duration: 3000,
+      gravity: 'top',
+      position: 'right',
+      style: {
+        background: '#008000'
+      },
+      close: true,
+      stopOnFocus: true,
+    }).showToast()
+  } else if (search.value === '') {
+    Toastify({
+      text: 'El Campo esta vacio',
+      duration: 3000,
+      gravity: 'top',
+      position: 'right',
+      style: {
+        background: '#ff0000',
+      },
+      close: true,
+      stopOnFocus: true,
+    }).showToast()
+  } else {
+    Toastify({
+      text: 'El personaje que esta buscando no existe!',
+      duration: 3000,
+      gravity: 'top',
+      position: 'right',
+      style: {
+        background: '#ff0000',
+      },
+      close: true,
+      stopOnFocus: true,
+    }).showToast()
+  }
+})
+
+search.addEventListener('keypress', (event) => {
+  if (event.key == 'Enter') {
+    const userFound = characterfind(search.value)
+    if (userFound !== undefined) {
+      localStorage.setItem('name', JSON.stringify(userFound))
+      Toastify({
+        text: 'El Nombre de Personaje Ingresado Existe',
+        duration: 3000,
+        gravity: 'top',
+        position: 'right',
+        style: {
+          background: '#008000'
+        },
+        close: true,
+        stopOnFocus: true,
+      }).showToast()
+    } else if (search.value === '') {
+      Toastify({
+        text: 'El Campo esta vacio',
+        duration: 3000,
+        gravity: 'top',
+        position: 'right',
+        style: {
+          background: '#ff0000',
+        },
+        close: true,
+        stopOnFocus: true,
+      }).showToast()
+    } else {
+      Toastify({
+        text: 'El personaje que esta buscando no existe!',
+        duration: 3000,
+        gravity: 'top',
+        position: 'right',
+        style: {
+          background: '#ff0000',
+        },
+        close: true,
+        stopOnFocus: true,
+      }).showToast()
+    }
+  }
+})
