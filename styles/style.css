@@ -29,35 +29,30 @@ header{
 
 
 
-/*--------------------------------MAIN--------------------------------*/
-
-main{
-    background-color: rgba(0,0,0,255);
-}
+/*--------------------------------MAIN GET CHARACTER--------------------------------*/
 
 .mid-title-container{
-    width: 100%;
-   height: 300px;
+   width: 100%;
+   height: 350px;
+
 }
 
 .mid-main-title-container{
     width: 50%;
-    height: 300px;
+    height: 100%;
     margin-left: 25%;
     display: flex;
 }
 
-.main-title{
+.main-title-img{
     width: 100%;
     height: 100%;
-    color: gold;
     font-size: 10rem;
 }
 
 .movies-container{
     width: 100%;
     height: 550px;
-    background-color: aqua;
     display: flex;
 }
 
@@ -72,40 +67,87 @@ main{
     position: relative;
 }
 
-.serch-movie{
+.search-movie{
+    background-color: azure;
     width: 60%;
     height: 100%;
-    background-color: blueviolet;
 }
 
-.serch-movie-input{
+.search-movie-input{
     width: 100%;
     height: 10%;
     display: flex;
     justify-content: center;
+    gap: 15px;
 }
 
-.input-serch{
+/*-------- search --------*/
+.input-search{
+    background-color: #008000;
     background-color: white;
     width: 50%;
     height: 40px;
     border-radius: 30px;
     border: 1px solid black;
+    padding: 10px;
+}
+
+/*-------- button --------*/
+
+
+
+.button-search-btn{
+    width: 3%;
+    height: 40px;
+    border: none;
+}
+
+.img-search-button{
+    color: white;
+    width: 100%;
+    font-size: 30px;
 }
 
 .character-container{
+    background-color: aliceblue;
     width: 100%;
     height: 90%;
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(5,1fr);
-    column-gap: 1rem;
 }
 
-.character{
+.character-img-container{
     width: 100%;
     height: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.character-img{
+    width: 22%; 
+    height: 100%;
+    border-radius: 10rem;
     background-color: rgb(214, 142, 47);
+    justify-items: center;
+}
+
+.info-character-container{
+    width: 100%; 
+    height: 50%;
+    display: flex;
+    justify-content: center;
+} 
+
+.info-character{
+    width: 50%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+    align-items: center;
+}
+
+.name-info-character{
+    background-color: whitesmoke;
+    width: 100%;
+    height: 60%;  
 }
 
 .img2-container{
@@ -113,3 +155,5 @@ main{
     height: 100%;
     background-color: blanchedalmond;
 }
+
+/*--------------------------------MAIN GET MOVIES--------------------------------*/

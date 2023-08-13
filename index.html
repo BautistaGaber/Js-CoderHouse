@@ -8,13 +8,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
         rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
         crossorigin="anonymous">
-        
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Harry Potter</title>
 </head>
 
 <body>
     <header>
-        <script src="index.js"></script>
         <nav class="navbar navbar-expand-lg bg-body-dark navbar-dark">
             <div class="container-fluid color-nav">
                 <div class="nav-image logo-nav">
@@ -44,38 +43,54 @@
         <div class="main-container">
             <div class="mid-title-container">
                 <div class="mid-main-title-container">
-                    <h1 class="main-title">Harry Potter</h1>
-                </div>   
+                    <img class="main-title-img" src="img/harry-potter-logo.png" alt="">
+                </div>
             </div>
             <section class="movies-container">
-                <div class="img1-container">   
-                     <img class="img1" src="img/harry-potter-img.png" alt="">              
+                <div class="img1-container">
+                    <img class="img1" src="img/harry-potter-img.png" alt="">
                 </div>
-                <div class="serch-movie">  
-                    <div class="serch-movie-input">
-                        <input class="input-serch" type="buscar pelicula">
+                <div class="search-movie">
+                    <div class="search-movie-input">
+                        <input class="input-search" id="inputt" placeholder="Buscar nombre de personaje">
+                        <button class="button-search-btn">
+                            <i class="fa-solid fa-magnifying-glass img-search-button" id="button-serch"></i>
+                        </button>
                     </div>
                     <div class="character-container">
-                        <div class="character">                      
+                        <div class="character-img-container">
+                            <div class="character-img">
+                            </div>
                         </div>
-                        <div class="character">                      
+                        <div class="info-character-container">
+                            <div class="info-character">
+                                <div class="name-info-character">
+
+                                </div>
+                                <div class="name-info-character">
+
+                                </div>
+                                <div class="name-info-character">
+
+                                </div>
+                                <div class="name-info-character">
+
+                                </div>                            
+                            </div>
                         </div>
-                        <div class="character">                      
-                        </div>
-                        <div class="character">                      
-                        </div>
-                        <div class="character">                      
-                        </div>
-                    </div>                   
+                    </div>
                 </div>
-                <div class="img2-container">  
-                    <img class="img1" src="img/harry-potter-img.png" alt="">  
+                <div class="img2-container">
+                    <img class="img1" src="img/harry-potter-img.png" alt="">
                 </div>
             </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2da5d6e9fa.js" crossorigin="anonymous"></script>
+    <script src="script/index.js" type="module"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 
 </html>
