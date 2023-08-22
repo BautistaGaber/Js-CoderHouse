@@ -1,21 +1,14 @@
 import { characters } from './script/charactersData.js'
 
-const charactermap = characters.map((character) => {
-  return character.name
-})
-
-const characterMapString = charactermap.join(', ')
-
-window.alert('Los nombres de los personajes son: ' + characterMapString)
-
 const characterfind = (name) => {
   return characters.find(
     (character) => character.name.toLowerCase() == name.toLowerCase()
   )
 }
 
-const search = document.getElementById('inputt')
+export const search = document.getElementById('inputt')
 const btnSearch = document.getElementById('button-serch')
+
 
 btnSearch.addEventListener('click', () => {
   const userFound = characterfind(search.value)
