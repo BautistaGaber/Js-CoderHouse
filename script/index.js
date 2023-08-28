@@ -1,4 +1,5 @@
-import { characters } from './script/charactersData.js'
+import { characters } from './charactersData.js'
+import { goToCharacterHtml } from './functions.js'
 
 const characterfind = (name) => {
   return characters.find(
@@ -6,14 +7,14 @@ const characterfind = (name) => {
   )
 }
 
-export const search = document.getElementById('inputt')
+const search = document.getElementById('inputt')
 const btnSearch = document.getElementById('button-serch')
 
 
 btnSearch.addEventListener('click', () => {
   const userFound = characterfind(search.value)
   if (userFound !== undefined) {
-    localStorage.setItem('name', JSON.stringify(userFound))
+    localStorage.setItem('characterSearch', JSON.stringify(userFound))
     Toastify({
       text: 'El Nombre de Personaje Ingresado Existe',
       duration: 3000,
@@ -25,6 +26,7 @@ btnSearch.addEventListener('click', () => {
       close: true,
       stopOnFocus: true,
     }).showToast()
+    setTimeout(goToCharacterHtml, 1000)
   } else if (search.value === '') {
     Toastify({
       text: 'El Campo esta vacio',
@@ -56,7 +58,7 @@ search.addEventListener('keypress', (event) => {
   if (event.key == 'Enter') {
     const userFound = characterfind(search.value)
     if (userFound !== undefined) {
-      localStorage.setItem('name', JSON.stringify(userFound))
+      localStorage.setItem('characterSearch', JSON.stringify(userFound))
       Toastify({
         text: 'El Nombre de Personaje Ingresado Existe',
         duration: 3000,
@@ -68,6 +70,7 @@ search.addEventListener('keypress', (event) => {
         close: true,
         stopOnFocus: true,
       }).showToast()
+      setTimeout(goToCharacterHtml, 1000)
     } else if (search.value === '') {
       Toastify({
         text: 'El Campo esta vacio',
@@ -95,3 +98,4 @@ search.addEventListener('keypress', (event) => {
     }
   }
 })
+
