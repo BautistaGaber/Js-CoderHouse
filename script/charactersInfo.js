@@ -45,13 +45,3 @@ const characterInformation = () => {
 }
 
 characterInformation()
-
-
-  // characterName.innerHTML = ` <p>Name: ${characterToSearch.name}</p>
-  // <p>Actor: ${characterToSearch.actor}</p>
-  // <p>House: ${characterToSearch.house}</p>
-  // <p>Species: ${characterToSearch.species}</p>
-  // <p>Gender: ${characterToSearch.gender}</p>
-  // <p>Patronus: ${characterToSearch.patronus}</p>
-  // <p>HogwartsStudent: ${characterToSearch.hogwartsStudent}</p>
-  // `

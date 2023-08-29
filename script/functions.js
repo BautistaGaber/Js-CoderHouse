@@ -1,7 +1,8 @@
 import { characters } from './charactersData.js'
 
 const imageGallery = document.getElementById('imageGallery')
-const randomImage = 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930'
+const randomImage =
+  'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930'
 
 export function updateGallery(firstResult, limit) {
   imageGallery.innerHTML = ''
@@ -34,11 +35,4 @@ export function randomImagee() {
 
 export function goToCharacterHtml() {
   window.location.href = 'character.html'
-} 
-
-
-
-
-
-
-
+}
